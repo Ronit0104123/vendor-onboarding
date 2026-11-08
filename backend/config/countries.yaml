@@ -1,0 +1,24 @@
+# Country rules. To add a country, add a block here; no code change needed.
+# Each field has a regex (full match) and a human label used in vendor messages.
+IN:
+  name: India
+  postal_code: { label: "PIN code", pattern: "^[1-9][0-9]{5}$", example: "110020" }
+  bank_code:   { label: "IFSC",     pattern: "^[A-Z]{4}0[A-Z0-9]{6}$", example: "NCBA0001234" }
+  tax_ids:
+    PAN:   { label: "PAN",   pattern: "^[A-Z]{5}[0-9]{4}[A-Z]$", example: "AABCS1234Q", required: true }
+    GSTIN: { label: "GSTIN", pattern: "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][1-9A-Z]Z[0-9A-Z]$", example: "07AABCS1234Q1Z5", required: true }
+  required_documents: [GST_CERT, PAN_CARD, BANK_PROOF]
+US:
+  name: United States
+  postal_code: { label: "ZIP code", pattern: "^[0-9]{5}(-[0-9]{4})?$", example: "94107" }
+  bank_code:   { label: "ABA routing number", pattern: "^[0-9]{9}$", example: "021000021" }
+  tax_ids:
+    EIN: { label: "EIN", pattern: "^[0-9]{2}-[0-9]{7}$", example: "12-3456789", required: true }
+  required_documents: [BANK_PROOF]
+GB:
+  name: United Kingdom
+  postal_code: { label: "postcode", pattern: "^[A-Z]{1,2}[0-9][A-Z0-9]? ?[0-9][A-Z]{2}$", example: "EC1A 1BB" }
+  bank_code:   { label: "sort code", pattern: "^[0-9]{2}-[0-9]{2}-[0-9]{2}$", example: "20-00-00" }
+  tax_ids:
+    VAT: { label: "VAT number", pattern: "^GB([0-9]{9}|[0-9]{12}|GD[0-4][0-9]{2}|HA[5-9][0-9]{2})$", example: "GB123456789", required: true }
+  required_documents: [BANK_PROOF]

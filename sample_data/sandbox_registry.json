@@ -1,0 +1,114 @@
+{
+  "gstins": {
+    "07AAHCS4821K1Z5": {
+      "status": "ACTIVE",
+      "legal_name": "SHARMA HARDWARE PRIVATE LIMITED"
+    },
+    "27AAPCK2209Q1ZX": {
+      "status": "ACTIVE",
+      "legal_name": "KAVERI POLYMERS PRIVATE LIMITED"
+    },
+    "29AADCD5512H1ZR": {
+      "status": "ACTIVE",
+      "legal_name": "DECCAN RAW MATERIALS PRIVATE LIMITED"
+    },
+    "27AAGCG6620B1ZY": {
+      "status": "ACTIVE",
+      "legal_name": "GANGA FREIGHT CARRIERS PRIVATE LIMITED"
+    },
+    "24AAPCP3398L1ZO": {
+      "status": "ACTIVE",
+      "legal_name": "PATEL INDUSTRIAL SUPPLIES PRIVATE LIMITED"
+    },
+    "24AAOCO8841D1Z9": {
+      "status": "ACTIVE",
+      "legal_name": "ORION FASTENERS PRIVATE LIMITED"
+    },
+    "36AAFFR2290C1ZF": {
+      "status": "ACTIVE",
+      "legal_name": "RAO STEEL CO"
+    },
+    "27AAMFM7745E1ZY": {
+      "status": "ACTIVE",
+      "legal_name": "MEHTA LOGISTICS LLP"
+    },
+    "09AAGFG1180P1Z0": {
+      "status": "ACTIVE",
+      "legal_name": "GUPTA AND SONS TRADERS"
+    },
+    "33AALCL6603G1ZM": {
+      "status": "ACTIVE",
+      "legal_name": "LAKSHMI CHEMICALS PRIVATE LIMITED"
+    },
+    "30AAKCK9051N1Z7": {
+      "status": "ACTIVE",
+      "legal_name": "KONKAN AGRO FOOD PRODUCTS PRIVATE LIMITED"
+    },
+    "06AASCS8812F1Z0": {
+      "status": "ACTIVE",
+      "legal_name": "SUNRISE CORRUGATORS PRIVATE LIMITED"
+    },
+    "03AAICI4429J1ZK": {
+      "status": "ACTIVE",
+      "legal_name": "INDUS CABLE WORKS PRIVATE LIMITED"
+    }
+  },
+  "accounts": {
+    "NCBA0001127:50200041887312": {
+      "status": "VERIFIED",
+      "name_at_bank": "SHARMA HARDWARE PRIVATE LIMITED"
+    },
+    "UCBK0000412:31840027759016": {
+      "status": "VERIFIED",
+      "name_at_bank": "KAVERI POLYMERS PRIVATE LIMITED"
+    },
+    "KRSB0002031:62110058804427": {
+      "status": "VERIFIED",
+      "name_at_bank": "DECCAN RAW MATERIALS PRIVATE LIMITED"
+    },
+    "NCBA0003320:10023348871209": {
+      "status": "VERIFIED",
+      "name_at_bank": "RAKESH KUMAR"
+    },
+    "UCBK0001875:40017720033581": {
+      "status": "VERIFIED",
+      "name_at_bank": "PATEL INDUSTRIAL SUPPLIES PRIVATE LIMITED"
+    },
+    "NCBA0004410:77810023914458": {
+      "status": "VERIFIED",
+      "name_at_bank": "NIMBUS PACKAGING PRIVATE LIMITED"
+    },
+    "KRSB0000876:30028871645520": {
+      "status": "VERIFIED",
+      "name_at_bank": "RAO STEEL CO"
+    },
+    "NCBA0002288:55100039917284": {
+      "status": "VERIFIED",
+      "name_at_bank": "MEHTA LOGISTICS LLP"
+    },
+    "UCBK0002964:20044458129931": {
+      "status": "VERIFIED",
+      "name_at_bank": "GUPTA AND SONS TRADERS"
+    },
+    "KRSB0003390:66320011457780": {
+      "status": "VERIFIED",
+      "name_at_bank": "LAKSHMI CHEMICALS PRIVATE LIMITED"
+    },
+    "NCBA0005102:48870020015643": {
+      "status": "VERIFIED",
+      "name_at_bank": "KONKAN AGRO FOODS PRIVATE LIMITED"
+    },
+    "UCBK0003391:70031180024419": {
+      "status": "VERIFIED",
+      "name_at_bank": "VERTEX ELECTRICALS PRIVATE LIMITED"
+    },
+    "NCBA0006631:81150043320987": {
+      "status": "VERIFIED",
+      "name_at_bank": "SUNRISE CORRUGATORS PRIVATE LIMITED"
+    },
+    "KRSB0004417:90012267751348": {
+      "status": "VERIFIED",
+      "name_at_bank": "INDUS CABLE WORKS PRIVATE LIMITED"
+    }
+  }
+}

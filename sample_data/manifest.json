@@ -1,0 +1,1534 @@
+{
+  "files": {
+    "sharma_gst_certificate.pdf": {
+      "sha256": "273564d86b765c39e1f858fbaabb4df0c161f095652f211b422bcea89f3cdee9",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "SHARMA HARDWARE PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AAHCS4821K",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "07AAHCS4821K1Z5",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "sharma_pan_card_scan.png": {
+      "sha256": "732f1584970b248c0da499f105fab052662b286b2b154ac825f911055906b024",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "SHARMA HARDWARE PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAHCS4821K",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "sharma_cancelled_cheque_scan.jpg": {
+      "sha256": "d338480acfda04fb7a85bb3b91dfdb1b3d867dd725ea03579e3dea1defd6ac86",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "SHARMA HARDWARE PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "50200041887312",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "NCBA0001127",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "kaveri_gst_certificate_scan.jpg": {
+      "sha256": "8b54681da399b7b1fa49fe3eaa8ede347705f6bad33559b26f49d00f74fa0271",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": "KAVERI POLYMERS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "pan": {
+            "value": "AAPCK2209Q",
+            "confidence": 0.9
+          },
+          "gstin": {
+            "value": "27AAPCK2209Q1ZX",
+            "confidence": 0.9
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "kaveri_pan_card.png": {
+      "sha256": "f5274367d059dc1b9d8bb2196a54fe16251e34b00d4d04cb33b66a38b40dd924",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.98,
+        "fields": {
+          "legal_name": {
+            "value": "KAVERI POLYMERS PRIVATE LIMITED",
+            "confidence": 0.98
+          },
+          "pan": {
+            "value": "AAKCK7310M",
+            "confidence": 0.98
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "kaveri_cancelled_cheque_scan.jpg": {
+      "sha256": "713b30c1f6fae8b608e14087b8b46300f01cf4d86de43449f121f1c8421c8978",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "KAVERI POLYMERS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "31840027759016",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "UCBK0000412",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "deccan_gst_certificate.pdf": {
+      "sha256": "5326725d109ad9136cddeb19be9ee95a3d6cb7eda88290170954df4247065aaf",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "DECCAN RAW MATERIALS PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AADCD5512H",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "29AADCD5512H1ZR",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "deccan_pan_card_scan.png": {
+      "sha256": "7965aa315a07110545fe9604e95c31ba84b6b85ef0a11924432f33c94a5ff1a0",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "DECCAN RAW MATERIALS PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AADCD5512H",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "deccan_cancelled_cheque_scan.jpg": {
+      "sha256": "dcd6f92a4e9f693649675b841608e399a6e04b5f70fd45ca2a789196ec11f6d1",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "DECCAN RAW MATERIALS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "62110058804427",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "KRSB0002031",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "ganga_gst_certificate.pdf": {
+      "sha256": "467e09b95704c9e5c6a30dfb7f6005c975ac8aec258b71482f1aa7ae57feb294",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "GANGA FREIGHT CARRIERS PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AAGCG6620B",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "27AAGCG6620B1ZY",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "ganga_pan_card_scan.png": {
+      "sha256": "d5df43956437e8430a63567a30a99ae7661c0c36623052beab4ac1fa7259ef73",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "GANGA FREIGHT CARRIERS PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAGCG6620B",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "ganga_cancelled_cheque_scan.jpg": {
+      "sha256": "f82956094d1fea1b64ff75666522296685b225e989db9dbb434aab52e8ac6b0e",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "RAKESH KUMAR",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "10023348871209",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "NCBA0003320",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "orion_gst_certificate_scan.jpg": {
+      "sha256": "12ffd09adbef54594c08ec8e04cb33ba7a512a42d088ef6fc83159331052a273",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": "ORION FASTENERS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "pan": {
+            "value": "AAOCO8841D",
+            "confidence": 0.9
+          },
+          "gstin": {
+            "value": "24AAOCO8841D1Z9",
+            "confidence": 0.9
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "orion_pan_card_scan.png": {
+      "sha256": "3585a405a1854b644f73fa3508c007c3954cb0d13fcf841762719e6602a3b9fc",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "ORION FASTENERS PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAOCO8841D",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "orion_cancelled_cheque_scan.jpg": {
+      "sha256": "dc84bd84394193ccfc25a03f99e903e8e149cf793eaae170ab1ed7cdeb852a20",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "ORION FASTENERS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "40017720033581",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "UCBK0001875",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "nimbus_gst_certificate.pdf": {
+      "sha256": "c376d394ef06fc09d1ad04dc5041eb8348ec6b6f9e174966431a0f28054568e6",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "NIMBUS PACKAGING PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AANCN4471R",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "06AANCN4471R1ZT",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": true
+      }
+    },
+    "nimbus_pan_card_scan.png": {
+      "sha256": "7419bd05b3ffcd425bc4aee89b1faea96e23374cee0b81f23ad677f40e55c562",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "NIMBUS PACKAGING PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AANCN4471R",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "nimbus_cancelled_cheque_scan.jpg": {
+      "sha256": "27736f388e3b5245f68e2297f4de6f1f65eecaf4208d0f069241719427d935c2",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "NIMBUS PACKAGING PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "77810023914458",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "NCBA0004410",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "thames_bank_letter.pdf": {
+      "sha256": "9c0bcafc3193c4020b56c7d06e77024bb4057cbc8df7b18a5c3d00ba0502e0f8",
+      "extraction": {
+        "doc_type": "BANK_LETTER",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "THAMES PRECISION LTD",
+            "confidence": 0.97
+          },
+          "account_number": {
+            "value": "41926837",
+            "confidence": 0.97
+          },
+          "ifsc": {
+            "value": "20-45-77",
+            "confidence": 0.97
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "patel_gst_certificate.pdf": {
+      "sha256": "1762380dd40555d50e0f68b2aa2bfdf5b65efb6a37cf0cc51539a88364f13f89",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "PATEL INDUSTRIAL SUPPLIES PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AAPCP3398L",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "24AAPCP3398L1ZO",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "patel_pan_card.png": {
+      "sha256": "c94c04f098a145bb7e847b85448274206e662a2daa3dfa11f8c0287a0701bb2c",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.98,
+        "fields": {
+          "legal_name": {
+            "value": "PATEL INDUSTRIAL SUPPLIES PRIVATE LIMITED",
+            "confidence": 0.98
+          },
+          "pan": {
+            "value": "AAPCP3398L",
+            "confidence": 0.98
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "patel_cancelled_cheque_scan.jpg": {
+      "sha256": "aa7f65a8ba063e5d42309502fb61ad616d61f42e1b2076b04aa36c7b0c631d16",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "PATEL INDUSTRIAL SUPPLIES PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "40017720033581",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "UCBK0001875",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "rao_gst_certificate_scan.jpg": {
+      "sha256": "ffcc9d95406d36b6df285eed7ab57bb9c7ec6877685e188fe998aa33edbbbf34",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": "RAO STEEL CO",
+            "confidence": 0.9
+          },
+          "pan": {
+            "value": "AAFFR2290C",
+            "confidence": 0.9
+          },
+          "gstin": {
+            "value": "36AAFFR2290C1ZF",
+            "confidence": 0.9
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "rao_pan_card_scan.png": {
+      "sha256": "08fda4da19387adb6c2fbbf46b7ebad9c04232f2a384176fe4ae93ec2dddb06a",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "RAO STEEL CO",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAFFR2290C",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "rao_bank_letter.pdf": {
+      "sha256": "5af63c18e9b6c8ac3ec07244262227ad0b563e1c1c4a42d32aff0f90839bb2b5",
+      "extraction": {
+        "doc_type": "BANK_LETTER",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "RAO STEEL CO",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "30028871645520",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "KRSB0000876",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "mehta_gst_certificate.pdf": {
+      "sha256": "9f8682fac4ce2546201a42bf62778371723f43d17a779790e93a0b0a29f0d036",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "MEHTA LOGISTICS LLP",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AAMFM7745E",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "27AAMFM7745E1ZY",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "mehta_pan_card_scan.png": {
+      "sha256": "905c810643f0bfe76df61c0a170d46311d753232f3fcf0837c420f4ee6688ed8",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "MEHTA LOGISTICS LLP",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAMFM7745E",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "mehta_cancelled_cheque_scan.jpg": {
+      "sha256": "897093fdc407142faa31102667bef9072f9e86bbd1e1fc9cd7e3496e77a83ca2",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "MEHTA LOGISTICS LLP",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "55100039917284",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "NCBA0002288",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "gupta_gst_certificate.pdf": {
+      "sha256": "ae7c0717a4c20e8c11d8af67a462e95c37c5eb5a469eca8099e1a89347d27c63",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "GUPTA AND SONS TRADERS",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AAGFG1180P",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "09AAGFG1180P1Z0",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "gupta_pan_card_scan.png": {
+      "sha256": "ec04ecf91056423860f0a3cedbb8ab5c10c8bc4d68e691c9b5b96248a6f21616",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "GUPTA AND SONS TRADERS",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAGFG1180P",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "gupta_cancelled_cheque_scan.jpg": {
+      "sha256": "cbcacd34d22d669c1778fc43e28615a2ba0fb786fa8d48baccbeb3d88e98bc54",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "GUPTA AND SONS TRADERS",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "20044458129931",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "UCBK0002964",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "bluegate_bank_letter.pdf": {
+      "sha256": "8bad43c8ae5e01eb5b125c2127ec6e7981ec148b62a567ef8cd563697f041907",
+      "extraction": {
+        "doc_type": "BANK_LETTER",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "BLUEGATE SOFTWARE LLC",
+            "confidence": 0.97
+          },
+          "account_number": {
+            "value": "000123456789",
+            "confidence": 0.97
+          },
+          "ifsc": {
+            "value": "111900659",
+            "confidence": 0.97
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "vertex_gst_certificate.pdf": {
+      "sha256": "efdc67245b9349056b8400a5219a338f582ed4c9ac0e53d4eaca4623d822814a",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "VERTEX ELECTRICALS PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AAVCV3314A",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "29AAVCV3314A1ZG",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "vertex_pan_card_scan.png": {
+      "sha256": "1dd18db299e91e8438028301a4ce4603cbbe0a9ca00ca214d1682bc56f8fbd59",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "VERTEX ELECTRICALS PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAVCV3314A",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "vertex_cancelled_cheque_scan.jpg": {
+      "sha256": "4bebbd80252977758d195a9e2a22dcced3219cb5463f12e59daf55e1d2303c8b",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "VERTEX ELECTRICALS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "70031180024419",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "UCBK0003391",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "lakshmi_gst_certificate.pdf": {
+      "sha256": "1e3e9e3b69c3cdd5bc8a921a4aac5146203f51dc62f0542257c60b20567cdfbd",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "LAKSHMI CHEMICALS PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AALCL6603G",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "33AALCL6603G1ZM",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "lakshmi_pan_card_scan.png": {
+      "sha256": "816d73c1d03fb0dd33372071ea321fcece72bafe8322b0effaa4a9e37229fb0e",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "LAKSHMI CHEMICALS PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AALCL6603G",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "lakshmi_cancelled_cheque_scan.jpg": {
+      "sha256": "d2b4e7c812f9c0daae18420e5278d1e9a48729fdef4e1de4c26d80dafd46a6f9",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "LAKSHMI CHEMICALS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "66320011457780",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "KRSB0003390",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "konkan_gst_certificate.pdf": {
+      "sha256": "ec97e21db2251908d7cdf4f052f735c4bcd6de8a0149931335e4e0048dc038c8",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "KONKAN AGRO FOOD PRODUCTS PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AAKCK9051N",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "30AAKCK9051N1Z7",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "konkan_pan_card_scan.png": {
+      "sha256": "e2d7111bfdf67d64cca443c6b4a7ba210f2117cf73259785294438670c263bad",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "KONKAN AGRO FOOD PRODUCTS PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAKCK9051N",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "konkan_cancelled_cheque_scan.jpg": {
+      "sha256": "2af1fceeb89b983e07666d7b543d903bbe13cbbc60bea392e095be4f4df70207",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "KONKAN AGRO FOODS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "48870020015643",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "NCBA0005102",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "indus_gst_certificate.pdf": {
+      "sha256": "a8b3b0d52584c04bfdd0b74345a187c2cc1f737176b58c6cb4974b991bcfcf0b",
+      "extraction": {
+        "doc_type": "GST_CERTIFICATE",
+        "doc_type_confidence": 0.97,
+        "fields": {
+          "legal_name": {
+            "value": "INDUS CABLE WORKS PRIVATE LIMITED",
+            "confidence": 0.97
+          },
+          "pan": {
+            "value": "AAICI4429J",
+            "confidence": 0.97
+          },
+          "gstin": {
+            "value": "03AAICI4429J1ZK",
+            "confidence": 0.97
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "indus_pan_card_scan.png": {
+      "sha256": "0deae9ad7e927f90bba6e0707261c396c8b936faac7f38a9a63c2d1d3750f1f5",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "INDUS CABLE WORKS PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AAICI4429J",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "indus_cancelled_cheque_scan.jpg": {
+      "sha256": "34d7cee61ef02c77a0f7589d8160efb002b1d9e69f8737c24c8dbde7f06e19c4",
+      "extraction": {
+        "doc_type": "CANCELLED_CHEQUE",
+        "doc_type_confidence": 0.9,
+        "fields": {
+          "legal_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "pan": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": "INDUS CABLE WORKS PRIVATE LIMITED",
+            "confidence": 0.9
+          },
+          "account_number": {
+            "value": "90012267751348",
+            "confidence": 0.9
+          },
+          "ifsc": {
+            "value": "KRSB0004417",
+            "confidence": 0.9
+          }
+        },
+        "contains_instructions": false
+      }
+    },
+    "sunrise_pan_card_scan.png": {
+      "sha256": "a496addd973ef6f1d47b9cb9520c1a3d503ae53f35444612fdbdc800dd231007",
+      "extraction": {
+        "doc_type": "PAN_CARD",
+        "doc_type_confidence": 0.92,
+        "fields": {
+          "legal_name": {
+            "value": "SUNRISE CORRUGATORS PRIVATE LIMITED",
+            "confidence": 0.92
+          },
+          "pan": {
+            "value": "AASCS8812F",
+            "confidence": 0.92
+          },
+          "gstin": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_holder_name": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "account_number": {
+            "value": null,
+            "confidence": 0.0
+          },
+          "ifsc": {
+            "value": null,
+            "confidence": 0.0
+          }
+        },
+        "contains_instructions": false
+      }
+    }
+  }
+}

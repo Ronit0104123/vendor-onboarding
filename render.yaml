@@ -1,0 +1,30 @@
+# Render blueprint: one web service from the Dockerfile. Fill the secret values in the dashboard.
+services:
+  - type: web
+    name: vendor-onboarding
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - { key: ENV, value: prod }
+      - { key: BUYER_NAME, value: "Acme Industries Pvt Ltd" }
+      - { key: PUBLIC_APP_URL, sync: false }      # e.g. https://vendor-onboarding.onrender.com
+      - { key: FRONTEND_ORIGIN, sync: false }     # same as PUBLIC_APP_URL
+      - { key: DATABASE_URL, sync: false }        # postgresql+psycopg://... (Neon / Supabase)
+      - { key: FERNET_KEY, sync: false }
+      - { key: HMAC_KEY, sync: false }
+      - { key: OPENAI_API_KEY, sync: false }
+      - { key: OPENAI_MODEL_VISION, value: gpt-5.4 }
+      - { key: OPENAI_MODEL_TEXT, value: gpt-5.4-mini }
+      - { key: STORAGE_BACKEND, value: s3 }
+      - { key: S3_BUCKET, sync: false }
+      - { key: S3_ENDPOINT_URL, sync: false }
+      - { key: S3_ACCESS_KEY_ID, sync: false }
+      - { key: S3_SECRET_ACCESS_KEY, sync: false }
+      - { key: RESEND_API_KEY, sync: false }
+      - { key: DEMO_ADMIN_EMAIL, sync: false }
+      - { key: DEMO_ADMIN_PASSWORD, sync: false }
+      - { key: DEMO_CHECKER_EMAIL, sync: false }
+      - { key: DEMO_CHECKER_PASSWORD, sync: false }
+      - { key: DEMO_VIEWER_EMAIL, sync: false }
+      - { key: DEMO_VIEWER_PASSWORD, sync: false }
