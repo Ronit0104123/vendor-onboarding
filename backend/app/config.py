@@ -44,6 +44,7 @@ class Settings(BaseSettings):
     smtp_user: str = ""
     smtp_password: str = ""
     resend_api_key: str = ""
+    brevo_api_key: str = ""
     email_from: str = "Acme Procurement <onboarding@example.com>"
     internal_alert_email: str = "procurement@example.com"
 

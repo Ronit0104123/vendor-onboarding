@@ -1,5 +1,7 @@
 """Every outgoing message is written to the outbox (the audit trail). Real delivery is optional:
 
+- Brevo HTTP API when BREVO_API_KEY is set (works on hosts that block SMTP ports, e.g. Railway;
+  the sender only needs to be a verified address, no domain required)
 - SMTP (e.g. a Gmail account with an app password) when SMTP_USER / SMTP_PASSWORD are set
 - Resend when RESEND_API_KEY is set
 - otherwise the message is only logged to the in-app outbox
@@ -10,6 +12,7 @@ so the fictional demo vendors don't bounce mail back to the sender.
 import logging
 import smtplib
 from email.message import EmailMessage
+from email.utils import parseaddr
 
 import httpx
 from sqlalchemy.orm import Session
@@ -33,10 +36,22 @@ def _send_smtp(to: str, subject: str, body: str) -> None:
     mail["To"] = to
     mail["Subject"] = subject
     mail.set_content(body)
-    with smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=15) as server:
+    with smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=8) as server:
         server.starttls()  # encrypt before sending credentials
         server.login(settings.smtp_user, settings.smtp_password)
         server.send_message(mail)
+
+
+def _send_brevo(to: str, subject: str, body: str) -> None:
+    name, address = parseaddr(settings.email_from)
+    response = httpx.post(
+        "https://api.brevo.com/v3/smtp/email",
+        headers={"api-key": settings.brevo_api_key, "accept": "application/json"},
+        json={"sender": {"name": name or address, "email": address}, "to": [{"email": to}],
+              "subject": subject, "textContent": body},
+        timeout=10,
+    )
+    response.raise_for_status()
 
 
 def _send_resend(to: str, subject: str, body: str) -> None:
@@ -55,7 +70,10 @@ def send_message(db: Session, *, vendor_id: int, kind: str, to: str, subject: st
                         subject=subject, body=body, drafted_by=drafted_by, sent_via="LOG")
     if deliverable(to):
         try:
-            if settings.smtp_user and settings.smtp_password:
+            if settings.brevo_api_key:
+                _send_brevo(to, subject, body)
+                msg.sent_via = "BREVO"
+            elif settings.smtp_user and settings.smtp_password:
                 _send_smtp(to, subject, body)
                 msg.sent_via = "SMTP"
             elif settings.resend_api_key:
