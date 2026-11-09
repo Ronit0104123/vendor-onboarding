@@ -11,3 +11,4 @@ frontend/dist/
 .env.*
 !.env.example
 DEPLOY_PROMPT.local.md
+*.local.md
