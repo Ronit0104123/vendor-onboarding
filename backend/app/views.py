@@ -1,5 +1,5 @@
 """Turns database rows into API responses. PAN and account numbers are always masked here."""
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -39,13 +39,28 @@ def last_run(vendor: Vendor) -> Run | None:
     return subs[-1].run if subs else None
 
 
+REMINDER_COOLDOWN = timedelta(hours=24)
+
+
 def reminder_due(db: Session, vendor: Vendor) -> tuple[bool, int]:
+    """Due when the vendor has been silent for REMINDER_DAYS since our last contact
+    (the last decision email or the last reminder, whichever is later)."""
     if vendor.status != "PENDING_VENDOR":
         return False, 0
     run = last_run(vendor)
     since = aware(run.finished_at if run and run.finished_at else vendor.updated_at)
+    if vendor.last_reminder_at:
+        since = max(since, aware(vendor.last_reminder_at))
     days = (clock.now(db) - since).days
     return days >= settings.reminder_days, days
+
+
+def reminder_available_at(db: Session, vendor: Vendor):
+    """When the next reminder may be sent, or None if one can be sent now."""
+    if not vendor.last_reminder_at:
+        return None
+    available = aware(vendor.last_reminder_at) + REMINDER_COOLDOWN
+    return available if available > clock.now(db) else None
 
 
 def vendor_row(db: Session, v: Vendor) -> dict:
@@ -54,7 +69,8 @@ def vendor_row(db: Session, v: Vendor) -> dict:
             "contact_email": v.contact_email, "requested_by": v.requested_by, "status": v.status,
             "attempt_count": v.attempt_count, "max_attempts": settings.max_attempts,
             "created_at": iso(v.created_at), "updated_at": iso(v.updated_at), "decided_at": iso(v.decided_at),
-            "reminder_due": due, "days_waiting": days}
+            "reminder_due": due, "days_waiting": days, "last_reminder_at": iso(v.last_reminder_at),
+            "reminder_available_at": iso(reminder_available_at(db, v))}
 
 
 def stage_view(s) -> dict:

@@ -13,6 +13,7 @@ export interface VendorRow {
   id: number; ref: string; display_name: string; category: string; contact_email: string;
   requested_by: string; status: VendorStatus; attempt_count: number; max_attempts: number;
   created_at: string; updated_at: string; decided_at: string | null; reminder_due: boolean; days_waiting: number;
+  last_reminder_at: string | null; reminder_available_at: string | null;
 }
 
 export interface Stats {

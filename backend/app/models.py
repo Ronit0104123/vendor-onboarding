@@ -49,6 +49,7 @@ class Vendor(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, index=True)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, onupdate=now)
     decided_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    last_reminder_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
     submissions: Mapped[list["Submission"]] = relationship(back_populates="vendor", order_by="Submission.attempt_no")
 

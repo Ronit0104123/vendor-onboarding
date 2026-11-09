@@ -17,7 +17,7 @@ from app.schemas import ClockIn, OverrideIn, OverrideReviewIn, RevealIn, VendorR
 from app.security.crypto import decrypt
 from app.security.sessions import Auth, current_auth, require_admin
 from app.services.vendors import create_vendor_request
-from app.views import aware, message_view, vendor_detail, vendor_row
+from app.views import aware, message_view, reminder_available_at, vendor_detail, vendor_row
 
 router = APIRouter(prefix="/api", tags=["console"])
 STATUSES = ["INVITED", "SUBMITTED", "PROCESSING", "PENDING_VENDOR", "PENDING_INTERNAL", "APPROVED", "REJECTED",
@@ -114,6 +114,10 @@ def send_reminder(vendor_id: int, auth: Auth = Depends(require_admin), db: DBSes
     v = get_vendor(db, vendor_id)
     if v.status != "PENDING_VENDOR":
         raise HTTPException(409, "Reminders can only be sent while waiting on the vendor.")
+    next_allowed = reminder_available_at(db, v)
+    if next_allowed:
+        raise HTTPException(429, "A reminder was sent in the last 24 hours. You can send the next one after "
+                                 f"{next_allowed.strftime('%d %b, %H:%M')} UTC.")
     link = active_link(db, v.id) or portal_url(issue_token(db, v.id))
     last_fix = db.scalars(select(OutboxMessage).where(OutboxMessage.vendor_id == v.id,
                                                       OutboxMessage.kind == "FIX_REQUEST")
@@ -125,10 +129,10 @@ def send_reminder(vendor_id: int, auth: Auth = Depends(require_admin), db: DBSes
     msg = send_message(db, vendor_id=v.id, kind="REMINDER", to=v.contact_email,
                        subject="Reminder: your vendor registration is incomplete",
                        body=body + SIGNATURE.format(buyer=settings.buyer_name))
-    v.updated_at = clock.now(db)
-    audit(db, auth.actor, "REMINDER_SENT", v.id)
+    v.last_reminder_at = clock.now(db)
+    audit(db, auth.actor, "REMINDER_SENT", v.id, to=v.contact_email, via=msg.sent_via)
     db.commit()
-    return message_view(msg)
+    return {"message": message_view(msg), "vendor": vendor_row(db, v)}
 
 
 @router.post("/submissions/{submission_id}/reveal")

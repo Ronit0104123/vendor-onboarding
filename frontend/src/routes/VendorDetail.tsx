@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BellRing, Download, ExternalLink, Eye, EyeOff, Gavel, Link2, PlayCircle } from "lucide-react";
 import { api, ApiError } from "@/lib/api";
@@ -16,6 +16,7 @@ import { Dialog } from "@/components/ui/dialog";
 import { Field, Textarea } from "@/components/ui/input";
 import { EmptyState, ErrorState, Panel, PanelHeader, Skeleton, Spinner } from "@/components/ui/misc";
 import { TabPanel, Tabs } from "@/components/ui/tabs";
+import { Toast, type ToastMessage } from "@/components/ui/toast";
 
 const FIELD_ROWS: [string, string][] = [
   ["legal_name", "Legal name"], ["trade_name", "Trade name"], ["country", "Country"], ["address_line", "Address"],
@@ -225,12 +226,15 @@ function OverrideDialog({ open, onClose, vendorId, fourEyes, onDone }: { open: b
 export default function VendorDetail() {
   const { id } = useParams();
   const { me } = useAuth();
-  const { data, error, loading, reload } = useApi<VD>(`/api/vendors/${id}`);
+  const { data, error, loading, reload, setData } = useApi<VD>(`/api/vendors/${id}`);
   const [selected, setSelected] = useState<number | null>(null);
   const [tab, setTab] = useState("attempts");
   const [overrideOpen, setOverrideOpen] = useState(false);
   const [linkOpen, setLinkOpen] = useState<string | null>(null);
-  const [notice, setNotice] = useState<string | null>(null);
+  const [toast, setToast] = useState<ToastMessage | null>(null);
+  const [sending, setSending] = useState(false);
+  const dismissToast = useCallback(() => setToast(null), []);
+  const notify = (title: string, body?: string) => setToast({ id: Date.now(), title, body });
   const [actionError, setActionError] = useState<string | null>(null);
 
   useEffect(() => { setSelected(null); }, [id]);
@@ -249,7 +253,24 @@ export default function VendorDetail() {
 
   async function act(fn: () => Promise<unknown>, ok: string) {
     setActionError(null);
-    try { await fn(); setNotice(ok); reload(true); } catch (e) { setActionError((e as ApiError).message); }
+    try { await fn(); if (ok) notify(ok); reload(true); } catch (e) { setActionError((e as ApiError).message); }
+  }
+
+  async function sendReminder() {
+    setActionError(null);
+    setSending(true);
+    try {
+      const r = await api.post<{ message: Message; vendor: VD["vendor"] }>(`/api/vendors/${v.id}/remind`);
+      // Update in place so the banner disappears and the button locks immediately, then refresh the rest.
+      setData((d) => (d ? { ...d, vendor: r.vendor, outbox: [...d.outbox, r.message] } : d));
+      const delivered = ["SMTP", "RESEND", "BREVO"].includes(r.message.sent_via);
+      notify("Reminder sent", delivered ? `Emailed to ${r.message.to}.` : `Logged in the outbox for ${r.message.to}.`);
+      reload(true);
+    } catch (e) {
+      setActionError((e as ApiError).message);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -265,8 +286,10 @@ export default function VendorDetail() {
             </Button>
           )}
           {v.status === "PENDING_VENDOR" && (
-            <Button size="sm" onClick={() => act(() => api.post(`/api/vendors/${v.id}/remind`), "Reminder logged in the outbox.")}>
-              <BellRing aria-hidden /> Send reminder
+            <Button size="sm" onClick={sendReminder} disabled={sending || !!v.reminder_available_at}
+              title={v.reminder_available_at ? `A reminder was sent recently. Next one available ${fmtDateTime(v.reminder_available_at)}.` : undefined}
+              aria-describedby={v.reminder_available_at ? "reminder-cooldown" : undefined}>
+              {sending ? <Spinner /> : <BellRing aria-hidden />} {v.reminder_available_at ? "Reminder sent" : "Send reminder"}
             </Button>
           )}
           {v.status === "PENDING_INTERNAL" && !pendingOverride && (
@@ -275,7 +298,12 @@ export default function VendorDetail() {
         </>
       )}
     >
-      <div aria-live="polite" className="sr-only">{notice}</div>
+      <Toast toast={toast} onDismiss={dismissToast} />
+      {v.reminder_available_at && v.status === "PENDING_VENDOR" && (
+        <p id="reminder-cooldown" className="-mt-2 mb-4 text-xs text-muted">
+          Last reminder sent {fmtDateTime(v.last_reminder_at)}. You can send another after {fmtDateTime(v.reminder_available_at)}.
+        </p>
+      )}
       {actionError && <p role="alert" className="mb-4 rounded-md border border-bad/20 bg-bad-soft px-3 py-2 text-[13px] text-bad">{actionError}</p>}
       {v.reminder_due && (
         <div className="mb-4 flex items-center gap-2 rounded-md border border-warn/20 bg-warn-soft px-3 py-2 text-[13px] text-warn">
@@ -294,8 +322,8 @@ export default function VendorDetail() {
               <p className="text-xs text-muted sm:max-w-48">You requested this, so another admin has to approve it.</p>
             ) : (
               <div className="flex shrink-0 gap-2">
-                <Button size="sm" onClick={() => act(() => api.post(`/api/overrides/${pendingOverride.id}/review`, { approve: false, note: "Declined on review" }), "Override declined.")}>Decline</Button>
-                <Button size="sm" variant="primary" onClick={() => act(() => api.post(`/api/overrides/${pendingOverride.id}/review`, { approve: true, note: "Approved on review" }), "Override applied.")}>Approve override</Button>
+                <Button size="sm" onClick={() => act(() => api.post(`/api/overrides/${pendingOverride.id}/review`, { approve: false, note: "Declined on review" }), "Override declined")}>Decline</Button>
+                <Button size="sm" variant="primary" onClick={() => act(() => api.post(`/api/overrides/${pendingOverride.id}/review`, { approve: true, note: "Approved on review" }), "Override applied")}>Approve override</Button>
               </div>
             ))}
           </div>
@@ -361,7 +389,7 @@ export default function VendorDetail() {
         </TabPanel>
       </div>
 
-      <OverrideDialog open={overrideOpen} onClose={() => setOverrideOpen(false)} vendorId={v.id} fourEyes={data.four_eyes} onDone={() => { setNotice("Override submitted."); reload(true); }} />
+      <OverrideDialog open={overrideOpen} onClose={() => setOverrideOpen(false)} vendorId={v.id} fourEyes={data.four_eyes} onDone={() => { notify("Override submitted", data.four_eyes ? "It takes effect once a second admin approves it." : undefined); reload(true); }} />
       <Dialog open={!!linkOpen} onClose={() => setLinkOpen(null)} title="Vendor portal link"
         description="Viewing this link is recorded in the audit trail. Share it only with the vendor's contact.">
         <div className="flex items-center gap-2 rounded-md border border-line bg-subtle p-2">

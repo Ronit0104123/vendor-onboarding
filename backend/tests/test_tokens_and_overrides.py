@@ -87,5 +87,16 @@ def test_reminder_flag_with_simulated_clock(admin):
     lakshmi = admin.get("/api/vendors?q=Lakshmi").json()["items"][0]
     admin.post("/api/clock", json={"offset_days": 30})
     assert admin.get("/api/vendors?q=Lakshmi").json()["items"][0]["reminder_due"] is True
-    assert admin.post(f"/api/vendors/{lakshmi['id']}/remind").status_code == 200
+    r = admin.post(f"/api/vendors/{lakshmi['id']}/remind")
+    assert r.status_code == 200
+    row = r.json()["vendor"]
+    assert row["reminder_due"] is False          # banner/bell clear once a reminder goes out
+    assert row["reminder_available_at"]          # button disabled for the next 24 h
+    second = admin.post(f"/api/vendors/{lakshmi['id']}/remind")
+    assert second.status_code == 429 and "24 hours" in second.json()["detail"]
+    admin.post("/api/clock", json={"offset_days": 31})  # a day later the cooldown has passed
+    row = admin.get("/api/vendors?q=Lakshmi").json()["items"][0]
+    assert row["reminder_available_at"] is None and row["reminder_due"] is False
+    admin.post("/api/clock", json={"offset_days": 34})  # silent again for 3+ days: due again
+    assert admin.get("/api/vendors?q=Lakshmi").json()["items"][0]["reminder_due"] is True
     admin.post("/api/clock", json={"offset_days": 0})
