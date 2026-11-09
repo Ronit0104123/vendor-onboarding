@@ -172,7 +172,7 @@ function MessageItem({ m }: { m: Message }) {
       <button className="flex w-full items-start gap-3 px-4 py-3 text-left hover:bg-subtle" aria-expanded={open} onClick={() => setOpen(!open)}>
         <div className="min-w-0 flex-1">
           <p className="truncate text-[13px] font-medium">{m.subject}</p>
-          <p className="text-xs text-muted">{MESSAGE_KIND[m.kind] ?? m.kind} · to {m.to} · {m.drafted_by === "LLM" ? "AI-drafted wording" : "template"} · {m.sent_via === "RESEND" ? "emailed" : "logged"}</p>
+          <p className="text-xs text-muted">{MESSAGE_KIND[m.kind] ?? m.kind} · to {m.to} · {m.drafted_by === "LLM" ? "AI-drafted wording" : "template"} · {m.sent_via === "SMTP" || m.sent_via === "RESEND" ? "emailed" : m.sent_via === "FAILED" ? "delivery failed" : "logged only"}</p>
         </div>
         <span className="num shrink-0 text-xs text-muted">{fmtDateTime(m.created_at)}</span>
       </button>

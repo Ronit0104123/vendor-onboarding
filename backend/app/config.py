@@ -38,7 +38,11 @@ class Settings(BaseSettings):
     run_worker: bool = True  # run the queue worker inside the web process
     demo_stage_delay_ms: int = 300  # makes the live view watchable when the mock LLM answers instantly
 
-    # Email (Resend). Without a key, messages go only to the in-app outbox.
+    # Email. SMTP (e.g. Gmail + app password) or Resend; without either, messages only go to the outbox.
+    smtp_host: str = "smtp.gmail.com"
+    smtp_port: int = 587
+    smtp_user: str = ""
+    smtp_password: str = ""
     resend_api_key: str = ""
     email_from: str = "Acme Procurement <onboarding@example.com>"
     internal_alert_email: str = "procurement@example.com"

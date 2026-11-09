@@ -12,3 +12,10 @@ def test_redacts_pan_and_account_but_keeps_gstin():
 def test_redacts_sensitive_keys():
     out = redact({"pan": "AAHCS4821K", "account_number": "50200041887312", "legal_name": "Sharma Hardware"})
     assert out == {"pan": "•••• 821K", "account_number": "•••• 7312", "legal_name": "Sharma Hardware"}
+
+
+def test_demo_addresses_are_never_emailed():
+    from app.emailer import deliverable
+    assert not deliverable("accounts@sharmahardware.example")
+    assert not deliverable("x@foo.test")
+    assert deliverable("someone@realcompany.in")
