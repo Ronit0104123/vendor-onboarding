@@ -43,14 +43,15 @@ async def seed_history() -> None:
     real_mode, real_delay = settings.llm_mode, settings.demo_stage_delay_ms
     settings.llm_mode, settings.demo_stage_delay_ms = "mock", 0
     try:
+        # Idempotent per case: a restart mid-seed (e.g. a platform health-check timeout) just finishes the rest.
         with SessionLocal() as db:
-            if db.scalars(select(Vendor).where(Vendor.is_seed)).first():
-                print("history already seeded")
-                return
+            existing = set(db.scalars(select(Vendor.display_name).where(Vendor.is_seed)).all())
         cases = sorted(((k, s) for k, s in scenarios().items() if s.get("seed_only")),
                        key=lambda kv: -kv[1]["seed"]["days_ago"])
         start = utcnow()
         for key, s in cases:
+            if s["request"]["display_name"] in existing:
+                continue
             t = start - timedelta(days=s["seed"]["days_ago"], hours=3)
             pin(t)
             with SessionLocal() as db:
@@ -72,6 +73,8 @@ async def seed_history() -> None:
                 print(f"  {s['title']:<38} {db.get(Vendor, vendor_id).status}")
         # One request that hasn't been opened yet.
         pin(start - timedelta(days=1, hours=4))
+        if "Coastal Marine Logistics Pvt Ltd" in existing:
+            return
         with SessionLocal() as db:
             create_vendor_request(db, VendorRequestIn(display_name="Coastal Marine Logistics Pvt Ltd", category="Logistics",
                                                       contact_email="accounts@coastalmarine.example",
