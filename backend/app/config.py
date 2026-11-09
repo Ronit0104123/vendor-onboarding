@@ -46,6 +46,7 @@ class Settings(BaseSettings):
     smtp_password: str = ""
     resend_api_key: str = ""
     brevo_api_key: str = ""
+    email_redirect_to: str = ""  # demo: send every email to this one address instead of the real recipient
     email_from: str = "Acme Procurement <onboarding@example.com>"
     internal_alert_email: str = "procurement@example.com"
 

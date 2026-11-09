@@ -68,7 +68,12 @@ def send_message(db: Session, *, vendor_id: int, kind: str, to: str, subject: st
                  drafted_by: str = "TEMPLATE", run_id: int | None = None) -> OutboxMessage:
     msg = OutboxMessage(vendor_id=vendor_id, run_id=run_id, kind=kind, to_address=to,
                         subject=subject, body=body, drafted_by=drafted_by, sent_via="LOG")
-    if deliverable(to):
+    # Demo mode: deliver everything to one inbox; the outbox still records the real recipient.
+    target, real_subject = to, subject
+    if settings.email_redirect_to:
+        target, real_subject = settings.email_redirect_to, f"[for {to}] {subject}"
+    if deliverable(target):
+        to, subject = target, real_subject
         try:
             if settings.brevo_api_key:
                 _send_brevo(to, subject, body)
@@ -83,5 +88,5 @@ def send_message(db: Session, *, vendor_id: int, kind: str, to: str, subject: st
             msg.sent_via = "FAILED"
             log.warning("email delivery failed kind=%s vendor=%s error=%s", kind, vendor_id, type(exc).__name__)
     db.add(msg)
-    audit(db, "system", "MESSAGE_SENT", vendor_id, kind=kind, to=to, via=msg.sent_via, drafted_by=drafted_by)
+    audit(db, "system", "MESSAGE_SENT", vendor_id, kind=kind, to=msg.to_address, via=msg.sent_via, drafted_by=drafted_by)
     return msg

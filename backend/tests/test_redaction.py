@@ -19,3 +19,19 @@ def test_demo_addresses_are_never_emailed():
     assert not deliverable("accounts@sharmahardware.example")
     assert not deliverable("x@foo.test")
     assert deliverable("someone@realcompany.in")
+
+
+def test_redirect_sends_demo_mail_to_one_inbox(monkeypatch):
+    from app import emailer
+    from app.db import SessionLocal
+    sent = []
+    monkeypatch.setattr(emailer.settings, "email_redirect_to", "me@inbox.test.in")
+    monkeypatch.setattr(emailer.settings, "resend_api_key", "k")
+    monkeypatch.setattr(emailer.settings, "smtp_user", "")
+    monkeypatch.setattr(emailer.settings, "brevo_api_key", "")
+    monkeypatch.setattr(emailer, "_send_resend", lambda to, subject, body: sent.append((to, subject)))
+    with SessionLocal() as db:
+        msg = emailer.send_message(db, vendor_id=1, kind="INVITE", to="accounts@x.example", subject="Hi", body="b")
+        db.rollback()
+    assert sent == [("me@inbox.test.in", "[for accounts@x.example] Hi")]
+    assert msg.to_address == "accounts@x.example" and msg.sent_via == "RESEND"
