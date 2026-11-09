@@ -12,3 +12,4 @@ frontend/dist/
 !.env.example
 DEPLOY_PROMPT.local.md
 *.local.md
+DEMO_SCRIPT.md
