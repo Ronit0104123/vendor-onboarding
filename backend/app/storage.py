@@ -23,8 +23,12 @@ class LocalStorage:
 
 
 class S3Storage:
+    """Any S3-compatible store: AWS S3, Cloudflare R2, or Supabase Storage
+    (endpoint https://<project-ref>.supabase.co/storage/v1/s3, path-style addressing)."""
+
     def __init__(self):
         import boto3
+        from botocore.config import Config
         self.bucket = settings.s3_bucket
         self.client = boto3.client(
             "s3",
@@ -32,11 +36,14 @@ class S3Storage:
             region_name=settings.s3_region,
             aws_access_key_id=settings.s3_access_key_id,
             aws_secret_access_key=settings.s3_secret_access_key,
+            config=Config(signature_version="s3v4",
+                          s3={"addressing_style": "path" if settings.s3_endpoint_url else "auto"}),
         )
 
     def put(self, name: str, data: bytes, content_type: str) -> None:
+        extra = {"ServerSideEncryption": "AES256"} if settings.s3_server_side_encryption else {}
         self.client.put_object(Bucket=self.bucket, Key=f"documents/{name}", Body=data,
-                               ContentType=content_type, ServerSideEncryption="AES256")
+                               ContentType=content_type, **extra)
 
     def get(self, name: str) -> bytes:
         return self.client.get_object(Bucket=self.bucket, Key=f"documents/{name}")["Body"].read()

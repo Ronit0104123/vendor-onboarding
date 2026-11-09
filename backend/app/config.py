@@ -35,6 +35,7 @@ class Settings(BaseSettings):
     s3_region: str = "auto"
     s3_access_key_id: str = ""
     s3_secret_access_key: str = ""
+    s3_server_side_encryption: bool = True  # AWS SSE header; set false for Supabase / R2 (they encrypt at rest anyway)
     run_worker: bool = True  # run the queue worker inside the web process
     demo_stage_delay_ms: int = 300  # makes the live view watchable when the mock LLM answers instantly
 
