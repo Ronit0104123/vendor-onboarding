@@ -2,6 +2,8 @@
 
 Files are never served from a public path: only the authorised /api/documents endpoint reads them.
 """
+import logging
+import mimetypes
 from pathlib import Path
 
 from app.config import settings
@@ -46,7 +48,18 @@ class S3Storage:
                                ContentType=content_type, **extra)
 
     def get(self, name: str) -> bytes:
-        return self.client.get_object(Bucket=self.bucket, Key=f"documents/{name}")["Body"].read()
+        try:
+            return self.client.get_object(Bucket=self.bucket, Key=f"documents/{name}")["Body"].read()
+        except self.client.exceptions.NoSuchKey:
+            # Files uploaded before the switch to S3 are still on the local volume.
+            # Serve from there and copy into the bucket so the next read is a hit.
+            data = LocalStorage(settings.storage_dir).get(name)
+            mime = mimetypes.guess_type(name)[0] or "application/octet-stream"
+            try:
+                self.put(name, data, mime)
+            except Exception:  # backfill is best-effort; the read already succeeded
+                logging.getLogger("app").warning("storage backfill failed for %s", name)
+            return data
 
 
 _storage = None
