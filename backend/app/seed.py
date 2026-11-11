@@ -98,13 +98,32 @@ def reset() -> None:
             conn.execute(text("DROP SCHEMA public CASCADE; CREATE SCHEMA public;"))
 
 
+def applied_nonce() -> str:
+    from app.models import AppState
+    with SessionLocal() as db:
+        row = db.get(AppState, "reset_demo_nonce")
+        return row.value if row else ""
+
+
+def remember_nonce(value: str) -> None:
+    from app.models import AppState
+    with SessionLocal() as db:
+        db.merge(AppState(key="reset_demo_nonce", value=value))
+        db.commit()
+
+
 def main() -> None:
-    if "--reset" in sys.argv:
-        reset()
     upgrade()
+    nonce = settings.reset_demo_nonce
+    if "--reset" in sys.argv or (nonce and applied_nonce() != nonce):
+        print("resetting demo data")
+        reset()
+        upgrade()
     with SessionLocal() as db:
         seed_users(db)
     asyncio.run(seed_history())
+    if nonce:
+        remember_nonce(nonce)
 
 
 if __name__ == "__main__":

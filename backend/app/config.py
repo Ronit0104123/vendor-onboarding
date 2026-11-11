@@ -65,6 +65,9 @@ class Settings(BaseSettings):
     openai_model_text: str = "gpt-5.4-mini"
     llm_timeout_seconds: float = 45.0
 
+    # Changing this value resets the demo data once on the next start (then it's remembered).
+    reset_demo_nonce: str = ""
+
     # Demo users (created by `python -m app.seed`; never hardcoded)
     demo_admin_email: str = ""
     demo_admin_password: str = ""
